@@ -5,7 +5,8 @@
     <div class="col-xs-9 col-sm-6 col-md-7">
       <div class="input-group">
         <select class="dropdown hidden-xs" name="category_id">
-          <option>Popularity</option>
+          <option>Choose your preference</option>
+          <option>Seasonal Fruits</option>
           <option>Price - Low to High</option>
           <option>Price - High to Low</option>
           <option>Alphabetical - A to Z</option>
@@ -25,7 +26,7 @@
           <h5 class="p-title">{{ item.title }}</h5>
           <p><strong>Price:</strong>${{ item.price }}</p>
           <p><strong class="rating">{{ item.rating.rate }}<i class="fas fa-star"></i></strong> {{ item.rating.count }} Ratings</p>
-          <button class="btn btn-primary">Add to cart</button>
+          <button class="btn btn-primary" (click)="addToCart(item)">Add to cart</button>
         </div>
       </div>
     </ng-container>
