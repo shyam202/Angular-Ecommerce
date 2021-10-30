@@ -1,0 +1,42 @@
+
+<app-header></app-header>
+<!-- Sliders -->
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[0]" alt="Random first slide">
+      <div class="carousel-caption1">
+        <h1 class="slide1">Fresh Fruits On Sale</h1>
+        <button class="btn1"><a routerLink="/products">Shop Now</a></button>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[1]" alt="Random second slide">
+      <div class="carousel-caption2">
+        <h1 class="slide2">Organic Veges</h1>
+        <button class="btn2">Hurry up</button>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[2]" alt="Random third slide">
+    </div>
+    <div class="carousel-caption3">
+      <h1 class="slide3">Combo pack Spices</h1>
+      <p class="off">50% Off</p>
+      <button class="btn btn3">Grab The Deal</button>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
