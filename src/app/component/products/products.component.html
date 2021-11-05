@@ -3,9 +3,8 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-9 col-sm-6 col-md-7">
-      <div class="input-group">
-        <select class="dropdown hidden-xs" name="category_id">
-          <option>Choose your preference</option>
+        <select class="dropdown">
+          <option>Choose your preference </option>
           <option>Seasonal Fruits</option>
           <option>Price - Low to High</option>
           <option>Price - High to Low</option>
@@ -13,13 +12,12 @@
         </select>
       </div>
     </div>
-  </div>
 </div>
 <div class="container">
   <div class="row">
     <h3>All Available Fruits</h3>
     <hr />
-    <ng-container *ngFor="let item of productList">
+    <ng-container *ngFor="let item of productList | filter:searchKey: 'title'">
       <div class="card col-md-4">
         <div class="card">
           <img src="{{ item.image }}" alt="fruits" />

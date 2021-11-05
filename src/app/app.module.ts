@@ -9,6 +9,8 @@ import { CartComponent } from './component/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { FilterPipe } from './shared/filter.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,16 @@ import { FooterComponent } from './component/footer/footer.component';
     ProductsComponent,
     CartComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

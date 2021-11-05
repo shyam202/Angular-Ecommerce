@@ -50,13 +50,13 @@
                 <div class="input-group">
                   <select class="cate-dropdown hidden-xs" name="category_id">
                     <option>All Categories</option>
-                    <option>Fruits</option>
+                    <option><a routerLink="/products">Fruits</a></option>
                     <option>Vegtables</option>
                     <option>Dry Fruits</option>
                     <option>Spices</option>
                     <option>Juice</option>
                   </select>
-                  <input type="text" class="form-control" placeholder="Search" name="search">
+                  <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search">
                   <button class="btn-search" type="button"><i class="fa fa-search"></i></button>
                 </div>
               </form>
