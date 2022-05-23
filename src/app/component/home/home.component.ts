@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  providers: [NgbCarouselConfig]
+  providers: [NgbCarouselConfig],
 })
 export class HomeComponent implements OnInit {
-
-  images = ['../../../assets/images/slider/slider-img1.jpg','../../../assets/images/slider/slider-img2.jpg','../../../assets/images/slider/slider-img3.jpg'];
+  images = [
+    '../../../assets/images/slider/slider-img1.jpg',
+    '../../../assets/images/slider/slider-img2.jpg',
+    '../../../assets/images/slider/slider-img3.jpg',
+  ];
   router: any;
 
+  constructor() {}
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

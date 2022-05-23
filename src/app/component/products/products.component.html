@@ -3,28 +3,39 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-9 col-sm-6 col-md-7">
-        <select class="dropdown">
-          <option>Choose your preference </option>
-          <option>Seasonal Fruits</option>
-          <option>Price - Low to High</option>
-          <option>Price - High to Low</option>
-          <option>Alphabetical - A to Z</option>
-        </select>
-      </div>
+      <select (change)="sortProduct($event.target)" class="dropdown">
+        <option selected value="undefined">Choose your preference</option>
+        <option value="l2h">Price - Low to High</option>
+        <option value="h2l">Price - High to Low</option>
+        <option value="a2z">Alphabetically - A to Z</option>
+      </select>
     </div>
+  </div>
 </div>
 <div class="container">
   <div class="row">
     <h3>All Available Fruits</h3>
     <hr />
-    <ng-container *ngFor="let item of productList | filter:searchKey: 'title'">
+    <ng-container *ngFor="let item of productList | filter: searchKey:'title'">
       <div class="card col-md-4">
         <div class="card">
           <img src="{{ item.image }}" alt="fruits" />
           <h5 class="p-title">{{ item.title }}</h5>
           <p><strong>Price:</strong>${{ item.price }}</p>
-          <p><strong class="rating">{{ item.rating.rate }}<i class="fas fa-star"></i></strong> {{ item.rating.count }} Ratings</p>
-          <button class="btn btn-primary" (click)="addToCart(item)">Add to cart</button>
+          <p>
+            <strong class="rating"
+              >{{ item.rating.rate }}<i class="fas fa-star"></i
+            ></strong>
+            {{ item.rating.count }} Ratings
+          </p>
+          <div>
+            <button class="btn btn-add" (click)="add(item)">+</button>
+            <span class="btn item-qnt">{{ item.qnt }}</span>
+            <button class="btn btn-minus" (click)="minus(item)">-</button>
+          </div>
+          <button class="btn btn-primary" (click)="addToCart(item)">
+            Add to cart
+          </button>
         </div>
       </div>
     </ng-container>
