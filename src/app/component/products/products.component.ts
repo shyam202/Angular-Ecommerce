@@ -1,7 +1,7 @@
 import { CartService } from './../../service/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/api.service';
-
+import  {productsTypes}  from '../../models/product-model';
 
 @Component({
   selector: 'app-products',
@@ -18,8 +18,8 @@ export class ProductsComponent implements OnInit {
     this.api.getProduct().subscribe((res: any) => {
       this.productList = res;
 
-      this.productList.forEach((a: any) => {
-        Object.assign(a, { quantity: 1, total: a.price });
+      this.productList.forEach((currProduct: productsTypes) => {
+        Object.assign(currProduct, { quantity: 1, total: currProduct.price });
       });
     });
     this.cartService.search.subscribe((val: any) => {
@@ -27,27 +27,27 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  add(item: any) {
+  add(item: productsTypes) {
     item.qnt += 1;
   }
 
-  minus(item: any) {
+  minus(item: productsTypes) {
     if (item.qnt != 0) {
       item.qnt -= 1;
     }
   }
 
-  addToCart(item: any) {
+  addToCart(item : string) {
     this.cartService.addtoCart(item);
   }
 
-  sortProduct(option: any) {
+  sortProduct(option:any) {
     if (option.value == 'l2h') {
-      this.productList.sort((a: any, b: any) => (a.price > b.price ? 1 : -1));
+      this.productList.sort((a: productsTypes, b: productsTypes) => (a.price > b.price ? 1 : -1));
     } else if (option.value == 'h2l') {
-      this.productList.sort((a: any, b: any) => (a.price < b.price ? 1 : -1));
+      this.productList.sort((a: productsTypes, b: productsTypes) => (a.price < b.price ? 1 : -1));
     } else if (option.value == 'a2z') {
-      this.productList.sort((a: any, b: any) => (a.title > b.title ? 1 : -1));
+      this.productList.sort((a: productsTypes, b: productsTypes) => (a.title > b.title ? 1 : -1));
     }
   }
 }

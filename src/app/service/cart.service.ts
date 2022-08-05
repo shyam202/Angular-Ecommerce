@@ -14,12 +14,12 @@ export class CartService {
     return this.productList.asObservable();
   }
 
-  setProduct(product: any) {
+  setProduct(product: string) {
     this.cartItemList.push(...product);
     this.productList.next(product);
   }
 
-  addtoCart(product: any) {
+  addtoCart(product: string) {
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
@@ -33,7 +33,7 @@ export class CartService {
     return grandTotal;
   }
 
-  removeCartItem(product: any) {
+  removeCartItem(product: any){
     this.cartItemList.map((a: any, index: any) => {
       if (product.id === a.id) {
         this.cartItemList.splice(index, 1);

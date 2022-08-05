@@ -20,7 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CartComponent,
     HeaderComponent,
     FooterComponent,
-    FilterPipe
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +31,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
