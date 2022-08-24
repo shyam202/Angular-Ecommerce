@@ -30,7 +30,7 @@
                 >
               </div>
               <div class="login">
-                <a href="#"
+                <a routerLink="/login"
                   ><i class="fa fa-unlock-alt"></i
                   ><span class="hidden-xs">Log In</span></a
                 >
@@ -98,6 +98,7 @@
                   </select>
                   <input
                     type="text"
+                    name="search"
                     class="form-control"
                     [(ngModel)]="searchTerm"
                     (keyup)="search($event)"
